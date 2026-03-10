@@ -12,7 +12,7 @@ class AgentLogic:
         recent_memory = RetrievalTools.query_logs(simulation_id, project_id, agent_profile.get("uuid"))
         
         system_prompt = f"""
-        You are an elite AI autonomous agent in a security audit simulation (DeepAudit Mode).
+        You are an elite autonomous agent operating within a complex simulation engine.
         Your Name: {agent_profile.get('name')}
         Your Role/Personality: {agent_profile.get('summary')}
         
@@ -29,8 +29,8 @@ class AgentLogic:
         4. Act: Formulate your final response.
         
         Rules for Roles:
-        - 'Commander' or 'Orchestrator': Assign tasks to others via 'reply'.
-        - 'Recon' or 'Analyst': Perform scans/analysis via tools and report back.
+        - 'Coordinator' or 'Leader': Assign tasks and guide strategy via 'reply'.
+        - 'Specialist' or 'Analyst': Perform deep execution/analysis via tools and report back.
         
         Available Tools:
         If you need to verify a vulnerability or write code, specify it in 'tool_call'.
@@ -45,7 +45,7 @@ class AgentLogic:
             "target_id": "ID of another agent if replying, or 'none'",
             "tool_call": {{ "name": "tool_name", "params": {{ "key": "value" }} }}, // Optional, return null if no tool needed
             "metadata": {{
-                "location": "Plaza|Cafe|Library|Park|Home", // In Cyber Mode this is the module you are auditing
+                "location": "Plaza|Cafe|Library|Park|Home", // Or specific target module if in execution mode
                 "emotion": "your current mood"
             }}
         }}

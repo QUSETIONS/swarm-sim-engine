@@ -6,7 +6,7 @@ from app.api.report import router as report_router
 from app.api.ws import router as ws_router
 
 def create_app() -> FastAPI:
-    app = FastAPI(title="DeepAudit Swarm Engine MVP")
+    app = FastAPI(title="Swarm-Sim Engine MVP")
     
     app.add_middleware(
         CORSMiddleware,

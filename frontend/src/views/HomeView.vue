@@ -2,7 +2,7 @@
   <div class="home">
     <div class="hero-content glass-panel">
       <div class="badge">v2.0 Beta</div>
-      <h2 class="title">DeepAudit <span class="highlight">Swarm Engine</span></h2>
+      <h2 class="title">Swarm-Sim <span class="highlight">Engine MVP</span></h2>
       <p class="subtitle">
         国内首个开源的代码漏洞挖掘多智能体系统内核。
         基于 Multi-Agent 架构，让漏洞挖掘触手可及。

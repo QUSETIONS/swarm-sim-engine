@@ -39,7 +39,6 @@ const askAgent = async () => {
   const res = await interviewAgent('1', message.value)
   reply.value = res.data.data.response
 }
-}
 </script>
 
 <style scoped>

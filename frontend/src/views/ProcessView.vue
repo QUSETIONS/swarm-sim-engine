@@ -31,16 +31,16 @@
             <div style="margin-top: 20px; display: flex; gap: 20px;">
               <div style="flex: 2;">
                 <div style="display:flex; justify-content:space-between; align-items:center;">
-                  <h4 :class="{ 'cyber-text': cyberMode }">{{ cyberMode ? 'Cyber Command Center (DeepAudit Mode)' : '小镇全景 (Town View)' }}</h4>
+                  <h4 :class="{ 'telemetry-text': telemetryMode }">{{ telemetryMode ? 'Telemetry View (Hacker Mode)' : '小镇全景 (Town View)' }}</h4>
                   <label class="switch">
-                    <input type="checkbox" v-model="cyberMode">
+                    <input type="checkbox" v-model="telemetryMode">
                     <span class="slider round"></span>
                   </label>
                 </div>
-                <TownViewport :simulationId="simulationId" :cyberMode="cyberMode" @selectAgent="onSelectAgent" />
+                <TownViewport :simulationId="simulationId" :telemetryMode="telemetryMode" @selectAgent="onSelectAgent" />
               </div>
               <div style="flex: 1;">
-                <SocialFeed :simulationId="simulationId" :cyberMode="cyberMode" />
+                <SocialFeed :simulationId="simulationId" :telemetryMode="telemetryMode" />
               </div>
             </div>
             
@@ -75,7 +75,7 @@ const simulationId = ref('sim_demo_1')
 const graphId = ref('')
 const entities = ref<any[]>([])
 const selectedAgent = ref<any | null>(null)
-const cyberMode = ref(false)
+const telemetryMode = ref(false)
 
 const onUploadDone = (data: any) => {
   projectId.value = data.projectId
@@ -214,7 +214,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-.cyber-text {
+.telemetry-text {
   color: #17e089;
   text-shadow: 0 0 5px #17e089;
 }

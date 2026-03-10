@@ -1,6 +1,6 @@
 <template>
-  <div class="social-feed" :class="{ 'cyber-feed': cyberMode }">
-    <h3>{{ cyberMode ? 'Agent Activity Stream' : '小镇朋友圈 (Social Feed)' }}</h3>
+  <div class="social-feed" :class="{ 'telemetry-feed': telemetryMode }">
+    <h3>{{ telemetryMode ? 'Agent Activity Stream' : '小镇朋友圈 (Social Feed)' }}</h3>
     <div v-if="moments.length === 0" class="empty">等待动态中...</div>
     <transition-group name="feed-list" tag="div" class="feed-container">
       <div v-for="(moment, i) in moments" :key="moment.timestamp + moment.agent_name + i" class="moment-card">
@@ -19,7 +19,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { connectSimulationLogStream, closeSimulationLogStream } from '../api/simulation'
 
-const props = defineProps<{ simulationId?: string, cyberMode?: boolean }>()
+const props = defineProps<{ simulationId?: string, telemetryMode?: boolean }>()
 const moments = ref<any[]>([])
 let wsListener: any = null
 
@@ -70,22 +70,22 @@ onUnmounted(() => {
 .content { font-size: 14px; line-height: 1.4; color: #333; }
 .footer { font-size: 11px; color: #999; margin-top: 5px; }
 
-/* Cyber Theme Overrides */
-.cyber-feed {
+/* Telemetry Theme Overrides */
+.telemetry-feed {
   background: #0d1117;
   border: 1px solid #17e089;
   color: #17e089;
   box-shadow: 0 0 10px rgba(23, 224, 137, 0.2);
 }
-.cyber-feed h3 { color: #17e089; }
-.cyber-feed .empty { color: #17e089; }
-.cyber-feed .moment-card {
+.telemetry-feed h3 { color: #17e089; }
+.telemetry-feed .empty { color: #17e089; }
+.telemetry-feed .moment-card {
   background: #161b22;
   border: 1px solid #30363d;
 }
-.cyber-feed .name { color: #17e089; font-family: monospace; }
-.cyber-feed .content { color: #c9d1d9; font-family: monospace; }
-.cyber-feed .footer { color: #666; font-family: monospace; }
+.telemetry-feed .name { color: #17e089; font-family: monospace; }
+.telemetry-feed .content { color: #c9d1d9; font-family: monospace; }
+.telemetry-feed .footer { color: #666; font-family: monospace; }
 
 /* Transition Group Animations */
 .feed-container {

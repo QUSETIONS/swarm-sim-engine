@@ -1,5 +1,5 @@
 <template>
-  <div ref="phaserContainer" class="phaser-container" :class="{ 'cyber-filter': cyberMode }"></div>
+  <div ref="phaserContainer" class="phaser-container" :class="{ 'telemetry-filter': telemetryMode }"></div>
 </template>
 
 <script setup lang="ts">
@@ -12,7 +12,7 @@ import { TownManager } from '../game/TownManager'
 import { connectSimulationLogStream, closeSimulationLogStream } from '../api/simulation'
 
 const emit = defineEmits(['selectAgent'])
-const props = defineProps<{ simulationId?: string, cyberMode?: boolean }>()
+const props = defineProps<{ simulationId?: string, telemetryMode?: boolean }>()
 const phaserContainer = ref<HTMLElement | null>(null)
 let game: Phaser.Game | null = null
 let townManager: TownManager | null = null
@@ -96,7 +96,7 @@ async function startPolling(scene: Phaser.Scene) {
   border: 4px solid #333;
   border-radius: 8px;
 }
-.cyber-filter {
+.telemetry-filter {
   filter: invert(0.9) hue-rotate(180deg) brightness(1.2) contrast(1.5);
   border-color: #17e089;
   box-shadow: 0 0 15px rgba(23, 224, 137, 0.4);

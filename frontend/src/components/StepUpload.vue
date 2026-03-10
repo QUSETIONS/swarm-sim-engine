@@ -3,12 +3,12 @@
     <h3 class="step-title">Step 1: Define Target & Assets</h3>
     <div class="form-group">
       <label class="glow-label">Audit Target Requirement:</label>
-      <textarea v-model="requirement" class="cyber-input" rows="4"></textarea>
+      <textarea v-model="requirement" class="code-input" rows="4"></textarea>
     </div>
     <div class="form-group">
       <label class="glow-label">Upload Target Blueprint (Doc/Code):</label>
       <div class="file-wrapper">
-        <input type="file" @change="onFileChange" class="cyber-file" />
+        <input type="file" @change="onFileChange" class="code-file" />
       </div>
     </div>
     <button @click="submit" :disabled="loading" class="primary-btn glow-btn btn-block">
@@ -45,7 +45,6 @@ const submit = async () => {
     loading.value = false
   }
 }
-}
 </script>
 
 <style scoped>
@@ -74,7 +73,7 @@ const submit = async () => {
   font-size: 1rem;
 }
 
-.cyber-input {
+.code-input {
   width: 100%;
   background: rgba(11, 15, 25, 0.7);
   border: 1px solid var(--panel-border);
@@ -87,7 +86,7 @@ const submit = async () => {
   resize: vertical;
 }
 
-.cyber-input:focus {
+.code-input:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 10px rgba(23, 224, 137, 0.2);
@@ -107,10 +106,10 @@ const submit = async () => {
   background: rgba(23, 224, 137, 0.05);
 }
 
-.cyber-file {
+.code-file {
   color: var(--text-muted);
 }
-.cyber-file::file-selector-button {
+.code-file::file-selector-button {
   background: transparent;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
@@ -120,7 +119,7 @@ const submit = async () => {
   margin-right: 15px;
   transition: all 0.3s ease;
 }
-.cyber-file::file-selector-button:hover {
+.code-file::file-selector-button:hover {
   background: var(--primary-color);
   color: var(--bg-color);
 }

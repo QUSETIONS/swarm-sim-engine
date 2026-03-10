@@ -3,7 +3,7 @@
     <h3 class="step-title">Step 2: Initialize Knowledge Graph</h3>
     <div class="form-group">
       <h4 class="glow-label">Extracted Ontology Entities:</h4>
-      <pre class="cyber-pre">{{ ontology }}</pre>
+      <pre class="code-pre">{{ ontology }}</pre>
     </div>
     <button @click="build" :disabled="loading" class="primary-btn glow-btn btn-block">
       {{ loading ? 'Constructing Edges...' : 'Confirm & Build Semantic Graph' }}
@@ -32,7 +32,6 @@ const build = async () => {
     loading.value = false
   }
 }
-}
 </script>
 
 <style scoped>
@@ -55,7 +54,7 @@ const build = async () => {
   font-size: 1.1rem;
 }
 
-.cyber-pre {
+.code-pre {
   background: #0d1117;
   color: var(--primary-color);
   border: 1px solid var(--panel-border);
@@ -69,7 +68,7 @@ const build = async () => {
   transition: all 0.3s;
 }
 
-.cyber-pre:hover {
+.code-pre:hover {
   border-color: var(--accent-cyan);
 }
 
