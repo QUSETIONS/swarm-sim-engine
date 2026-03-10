@@ -1,8 +1,8 @@
 import os
 import json
 import time
-from app.models.task import TaskManager
-from app.config import Config
+from core.domain.task import TaskManager
+from core.config import Config
 
 def test_task_manager_persistence():
     # Clear existing tasks file

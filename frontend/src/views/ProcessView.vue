@@ -60,13 +60,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import StepUpload from '../components/StepUpload.vue'
-import StepGraph from '../components/StepGraph.vue'
-import StepSimulation from '../components/StepSimulation.vue'
-import StepReport from '../components/StepReport.vue'
-import TownViewport from '../components/TownViewport.vue'
-import SocialFeed from '../components/SocialFeed.vue'
-import AgentInterviewModal from '../components/AgentInterviewModal.vue'
+import StepUpload from '../modules/ConfigWizard.vue'
+import StepGraph from '../modules/OntologyBuilder.vue'
+import StepSimulation from '../modules/EngineMonitor.vue'
+import StepReport from '../modules/AnalyticsDashboard.vue'
+import TownViewport from '../modules/SpatialCanvas.vue'
+import SocialFeed from '../modules/SocialFeed.vue'
+import AgentInterviewModal from '../modules/AgentInterviewModal.vue'
 
 const currentStep = ref(1)
 const projectId = ref('')

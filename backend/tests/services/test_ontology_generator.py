@@ -1,5 +1,5 @@
 import pytest
-from app.services.ontology_generator import OntologyGenerator
+from core.engine.ontology_generator import OntologyGenerator
 
 class FakeLLMClient:
     def generate(self, prompt):

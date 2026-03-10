@@ -5,10 +5,10 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import Phaser from 'phaser'
-import { generateTileset } from '../game/tileset-generator'
-import { generateAgentSprite } from '../game/AgentSprite'
-import { generateMapData } from '../game/town-map'
-import { TownManager } from '../game/TownManager'
+import { generateTileset } from '../simulation_renderer/tileset-generator'
+import { generateAgentSprite } from '../simulation_renderer/AgentSprite'
+import { generateMapData } from '../simulation_renderer/town-map'
+import { TownManager } from '../simulation_renderer/TownManager'
 import { connectSimulationLogStream, closeSimulationLogStream } from '../api/simulation'
 
 const emit = defineEmits(['selectAgent'])

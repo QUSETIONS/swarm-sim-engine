@@ -1,5 +1,5 @@
-from app.utils.llm_client import LLMClient
-from app.services.retrieval_tools import RetrievalTools
+from core.utils.llm_client import LLMClient
+from core.engine.memory_retriever import RetrievalTools
 import random
 
 class AgentLogic:
@@ -73,7 +73,7 @@ class AgentLogic:
         # Execute Sandbox Tool if requested
         tool_call = llm_response.get("tool_call")
         if tool_call and isinstance(tool_call, dict) and tool_call.get("name"):
-            from app.services.sandbox_tool import SandboxTool
+            from core.engine.sandbox_tool import SandboxTool
             tool_result = SandboxTool.execute(tool_call.get("name"), tool_call.get("params", {}))
             content += f"\n\n{tool_result}"
         

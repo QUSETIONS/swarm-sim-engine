@@ -2,7 +2,7 @@ import uuid
 import json
 import os
 import threading
-from app.config import Config
+from core.config import Config
 
 class ProjectManager:
     _lock = threading.Lock()

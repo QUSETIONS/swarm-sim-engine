@@ -1,4 +1,4 @@
-from app.services.profile_generator import ProfileGenerator
+from core.engine.profile_generator import ProfileGenerator
 
 def test_profile_generator_maps_entities_to_agents():
     entities = [{"uuid": "1", "name": "Alice", "labels": ["Person"], "summary": "student"}]

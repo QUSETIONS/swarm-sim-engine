@@ -9,4 +9,4 @@ def completed_simulation():
 def test_generate_report_returns_report_id(client, completed_simulation):
     response = client.post("/api/report/generate", json={"simulation_id": completed_simulation.simulation_id})
     assert response.status_code == 200
-    assert response.json["data"]["report_id"].startswith("report_")
+    assert response.json()["data"]["report_id"].startswith("report_")

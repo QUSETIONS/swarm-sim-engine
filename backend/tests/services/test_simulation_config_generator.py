@@ -1,5 +1,5 @@
 import pytest
-from app.services.simulation_config_generator import SimulationConfigGenerator
+from core.engine.simulation_config_generator import SimulationConfigGenerator
 
 class FakeLLMClient:
     def generate(self, prompt):

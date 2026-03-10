@@ -2,13 +2,11 @@ import io
 import pytest
 
 def test_end_to_end_pipeline(client):
-    data = {
-        "files": (io.BytesIO(b"sample text content"), "sample.txt"),
-        "simulation_requirement": "Predict discussion",
-    }
-    res1 = client.post("/api/graph/ontology/generate", data=data, content_type="multipart/form-data")
+    files = {"files": ("sample.txt", io.BytesIO(b"sample text content"))}
+    data = {"simulation_requirement": "Predict discussion"}
+    res1 = client.post("/api/graph/ontology/generate", data=data, files=files)
     assert res1.status_code == 200
-    project_id = res1.json["data"]["project_id"]
+    project_id = res1.json()["data"]["project_id"]
     
     res2 = client.post("/api/graph/build", json={"project_id": project_id})
     assert res2.status_code == 200
@@ -24,4 +22,4 @@ def test_end_to_end_pipeline(client):
     
     res6 = client.post("/api/report/generate", json={"simulation_id": "sim_1"})
     assert res6.status_code == 200
-    assert "report_id" in res6.json["data"]
+    assert "report_id" in res6.json()["data"]

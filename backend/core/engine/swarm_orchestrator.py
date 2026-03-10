@@ -1,11 +1,11 @@
-from app.models.task import TaskManager
-from app.models.project import ProjectManager
-from app.services.agent_logic import AgentLogic
+from core.domain.task import TaskManager
+from core.domain.project import ProjectManager
+from core.engine.persona_cortex import AgentLogic
 import time
 import os
 import json
 import datetime
-from app.config import Config
+from core.config import Config
 from loguru import logger
 
 class SimulationRunner:
@@ -56,10 +56,10 @@ class SimulationRunner:
                             # Social Evolution
                             target_id = action.get("target_id")
                             if target_id:
-                                from app.services.graph_evolver import GraphEvolver
+                                from core.engine.graph_evolver import GraphEvolver
                                 GraphEvolver.record_interaction(project_id, agent["uuid"], target_id, action.get("content", ""))
                             
-                            from app.api.ws import manager
+                            from core.endpoints.ws import manager
                             import asyncio
                             try:
                                 asyncio.run(manager.broadcast_to_simulation(simulation_id, entry))

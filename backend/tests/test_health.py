@@ -1,12 +1,13 @@
 import pytest
-from app import create_app
+from core import create_app
+
+from fastapi.testclient import TestClient
 
 @pytest.fixture
 def client():
     app = create_app()
-    app.config["TESTING"] = True
-    with app.test_client() as client:
-        yield client
+    client = TestClient(app)
+    yield client
 
 def test_health_endpoint(client):
     response = client.get("/health")

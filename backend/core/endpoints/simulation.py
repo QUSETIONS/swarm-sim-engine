@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException
-from app.services.profile_generator import ProfileGenerator
-from app.services.simulation_config_generator import SimulationConfigGenerator
-from app.utils.llm_client import LLMClient
-from app.models.task import TaskManager
-from app.services.simulation_runner import SimulationRunner
+from core.engine.profile_generator import ProfileGenerator
+from core.engine.simulation_config_generator import SimulationConfigGenerator
+from core.utils.llm_client import LLMClient
+from core.domain.task import TaskManager
+from core.engine.swarm_orchestrator import SimulationRunner
 import threading
 
 router = APIRouter()

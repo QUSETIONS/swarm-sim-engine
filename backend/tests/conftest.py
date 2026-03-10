@@ -1,9 +1,9 @@
 import pytest
-from app import create_app
+from core import create_app
 import os
 import shutil
 import time
-from app.config import Config
+from core.config import Config
 
 @pytest.fixture
 def app():
@@ -13,9 +13,6 @@ def app():
     Config.PROJECT_DIR = test_data_dir
     
     app = create_app()
-    app.config.update({
-        "TESTING": True,
-    })
 
     yield app
     
@@ -29,13 +26,11 @@ def app():
         except Exception:
             pass
 
-@pytest.fixture
-def client(app):
-    return app.test_client()
+from fastapi.testclient import TestClient
 
 @pytest.fixture
-def runner(app):
-    return app.test_cli_runner()
+def client(app):
+    return TestClient(app)
 
 @pytest.fixture
 def prepared_simulation():

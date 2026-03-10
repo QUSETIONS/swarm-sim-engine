@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.graph import router as graph_router
-from app.api.simulation import router as simulation_router
-from app.api.report import router as report_router
-from app.api.ws import router as ws_router
+from core.endpoints.graph import router as graph_router
+from core.endpoints.simulation import router as simulation_router
+from core.endpoints.report import router as report_router
+from core.endpoints.ws import router as ws_router
 
 def create_app() -> FastAPI:
     app = FastAPI(title="Swarm-Sim Engine MVP")

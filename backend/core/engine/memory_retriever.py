@@ -1,7 +1,7 @@
 import os
 import json
-from app.config import Config
-from app.models.project import ProjectManager
+from core.config import Config
+from core.domain.project import ProjectManager
 
 class RetrievalTools:
     @staticmethod

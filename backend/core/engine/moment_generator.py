@@ -1,5 +1,5 @@
 import json
-from app.utils.llm_client import LLMClient
+from core.utils.llm_client import LLMClient
 
 class MomentGenerator:
     @staticmethod

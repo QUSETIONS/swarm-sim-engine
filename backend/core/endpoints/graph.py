@@ -1,14 +1,14 @@
 from fastapi import APIRouter, File, UploadFile, Form
 from typing import List, Optional
-from app.models.project import ProjectManager
+from core.domain.project import ProjectManager
 import os
 import threading
-from app.config import Config
-from app.utils.file_parser import extract_text
-from app.services.ontology_generator import OntologyGenerator
-from app.utils.llm_client import LLMClient
-from app.models.task import TaskManager
-from app.services.graph_builder import GraphBuilder
+from core.config import Config
+from core.utils.file_parser import extract_text
+from core.engine.ontology_generator import OntologyGenerator
+from core.utils.llm_client import LLMClient
+from core.domain.task import TaskManager
+from core.engine.semantic_mesh_builder import GraphBuilder
 
 router = APIRouter()
 

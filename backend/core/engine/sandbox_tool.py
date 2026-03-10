@@ -1,4 +1,4 @@
-from app.services.sandbox_executor import DockerSandbox
+from core.engine.sandbox_executor import DockerSandbox
 
 class SandboxTool:
     _executor = DockerSandbox()

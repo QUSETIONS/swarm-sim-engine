@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.services.report_agent import ReportAgent
+from core.engine.report_agent import ReportAgent
 
 router = APIRouter()
 

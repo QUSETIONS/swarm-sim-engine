@@ -1,4 +1,4 @@
-from app.models.task import TaskManager
+from core.domain.task import TaskManager
 import time
 
 class GraphBuilder:

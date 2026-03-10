@@ -1,5 +1,5 @@
 import uuid
-from app.services.retrieval_tools import RetrievalTools
+from core.engine.memory_retriever import RetrievalTools
 
 class ReportAgent:
     def __init__(self, llm_client=None):
