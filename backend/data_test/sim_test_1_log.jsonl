@@ -1,0 +1,3 @@
+{"timestamp": "2026-03-10T11:53:39.582260", "round": 1, "agent_id": "1", "agent_name": "Alice", "action": "reply", "content": "As Alice, I think about Round 1 in the swarm...", "metadata": {"location": "plaza", "emotion": "curious"}}
+{"timestamp": "2026-03-10T11:53:40.085170", "round": 1, "agent_id": "2", "agent_name": "Bob", "action": "reply", "content": "As Bob, I think about Round 1 in the swarm...", "metadata": {"location": "plaza", "emotion": "curious"}}
+{"timestamp": "2026-03-10T11:53:40.586030", "round": 2, "agent_id": "1", "agent_name": "Alice", "action": "reply", "content": "As Alice, I think about Round 2 in the swarm...", "metadata": {"location": "plaza", "emotion": "curious"}}

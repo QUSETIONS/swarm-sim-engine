@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.vite/
+*.local
+.git/
+.gitignore
+*.md
+Dockerfile
+.dockerignore
+playwright-report/
+test-results/
